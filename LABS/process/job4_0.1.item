@@ -125,39 +125,24 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_1"/>
   </node>
-  <node componentName="tSOAP" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="224">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSOAP_1"/>
-    <elementParameter field="CHECK" name="USE_NTLM" value="false"/>
-    <elementParameter field="TEXT" name="NTLM_DOMAIN" show="false" value="&quot;192.168.0.100&quot;"/>
-    <elementParameter field="CHECK" name="NEED_AUTH" value="false"/>
-    <elementParameter field="TEXT" name="AUTH_USERNAME" show="false" value="&quot;username&quot;"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" show="false" value="PoLvNyVG2XWndNDdLn696A=="/>
+  <node componentName="tDropboxGet" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDropboxGet_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="ACCESS_TOKEN" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
-    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;61.163.92.4&quot;"/>
-    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="8080"/>
-    <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="0RMsyjmybrE="/>
-    <elementParameter field="CHECK" name="NEED_SSL_TO_TRUSTSERVER" value="false"/>
-    <elementParameter field="TEXT" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;C:/clientTrustStore.trustStore&quot;"/>
-    <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="PoLvNyVG2XWndNDdLn696A=="/>
-    <elementParameter field="TEXT" name="ENDPOINT" value="&quot;http://www.webservicex.net/globalweather.asmx&quot;"/>
-    <elementParameter field="TEXT" name="ACTION" value="&quot;http://www.webserviceX.NET/GetWeather&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="SOAP_VERSION" value="Soap11"/>
-    <elementParameter field="CHECK" name="USE_MESSAGE_FROM_SCHEMA" value="false"/>
-    <elementParameter field="PREV_COLUMN_LIST" name="SOAPMESSAGE_FROM_SCHEMA" show="false" value=""/>
-    <elementParameter field="MEMO" name="SOAPMESSAGE" value="&quot;&quot;"/>
-    <elementParameter field="CHECK" name="OUTPUT_DOCUMENT" value="false"/>
-    <elementParameter field="CHECK" name="USE_KERBEROS" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="KERBEROS_CONFIGURATION" show="false" value=""/>
-    <elementParameter field="CHECK" name="ENFORCE_NTLM" show="false" value="false"/>
+    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;127.0.0.1&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="8087"/>
+    <elementParameter field="TEXT" name="PATH" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="STORE_TO_LOCAL" value="false"/>
+    <elementParameter field="FILE" name="OUTPUT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSOAP_1">
-      <column defaultValue="" key="false" length="0" name="Header" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tDropboxGet_1">
+      <column defaultValue="" key="false" length="0" name="fileName" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="content" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tSOAP_1">
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tDropboxGet_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
   </connection>
   <subjob>
@@ -166,17 +151,17 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSOAP_1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDropboxGet_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6d61c361-43c0-478e-9151-5b1d91c42d48"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Xe70yY8uqt89zqB6s9sYai8AViB5VdLcswG7mlBRqjCN4nAlTmK4MzABuQMVBG6j/7Wt3XjjtYyQ
-3W+XYPffSA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7f93ef51-8d04-4844-a7df-73073fac169c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oMcO2OwmBuxwu4O4JBma1vQ8qAHOHqr30iuvXfiV20h7UWkTrabQfaClFY86EKKCeRNf22VqHweY
-2MZleKkApQ==</DigestValue></Reference></SignedInfo><SignatureValue>dURgT9CwVyBNV5pr6VBKqHm2a1jYdDLw6f/7J7UCRLsjKGJGt0MFar35c/731kkM3waaPGvFeIfR
-usT4nhodUIRIq/FcsO9MaGdvtp2y8iu4WP+QFdKLyHsiTpD5Hw9zA/yDUPhDvkIqQeD5c43DXfnp
-3pBfMnFyQSGZ2XfzkZcH5vSc20NQni9DtUuiNlMDiEfVTdvCcDmTMS49n5DiSst32YSUMEkyMXu0
-VMN9t8EtY65OtnEVlm/0xQez17dKvWLBBjRBdln1sx4Tthbde9C3krautySz1ZbbxMKdFJnN8TdG
-1H2jnQAfE/cguxunDeevPW9c7pA6O6VRyyXLzA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f9deae3b-8367-4492-906f-2ced03150e49"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ox36FdEJsZeNGX+qbtugi6VehTxoOAevX7MywU4o3zawMj66tkm08fJ+R5EgGgYWOh9bUy1zoEXm
+/8ElcMzzog==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_16d1e0fd-4b4b-4f08-abaa-975623949de7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VpUkB3ea/7EQqUOmAJJ5PwCrYNKBOXnj9wTRnZqRw3KTDNYcTCi4m9+JxwBS2lXW8Y3uXJObYrpu
+Qe8qvohypw==</DigestValue></Reference></SignedInfo><SignatureValue>beEXKbIBmFDsfMuiVEZMLU/AlqqCleSkGyTAEjNKBLKu9ZqEzqK+VVqrxsoW+kb8SScflhya2cVL
+I6FyOhE8q4fcuPtCrtg4nd7p8fnQYn/0xgapVLOsu9tQ4P0rg67UVZ6KC5sFj1BOrZ29PFcqmAS4
+jFnfPWxZ4w2fdcPOXgAyALBgrCPSXY+ulGZEOhEn7Pr2HLZp/17jeI8OPLxab4PGx1EUVorzACM4
+LWSQavLJp9fcLs3O/p10gXtK8THyRa6LSoh6prif2WUXPZNwmY67l+GO715zMoeJov46c8eSiu6F
+l+UDTi9zPiQTPQWhTMViJws9xbMfVOFLCmLzpw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -198,4 +183,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7f93ef51-8d04-4844-a7df-73073fac169c" Target="#_6d61c361-43c0-478e-9151-5b1d91c42d48"><Timestamp>2021-02-04 15:07:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_16d1e0fd-4b4b-4f08-abaa-975623949de7" Target="#_f9deae3b-8367-4492-906f-2ced03150e49"><Timestamp>2021-02-04 15:08:55</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
