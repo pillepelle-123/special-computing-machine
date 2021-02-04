@@ -164,11 +164,19 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="out3" name="out3"/>
+    <metadata connector="FLOW" label="out3" name="out3">
+      <column key="false" length="0" name="Header" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out3" sizeState="INTERMEDIATE"/>
+      <outputTables name="out3" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.Header " name="Header" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Body " name="Body" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Fault " name="Fault" nullable="true" type="id_String"/>
+      </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Header" nullable="true" type="id_String"/>
         <mapperTableEntries name="Body" nullable="true" type="id_String"/>
@@ -196,14 +204,18 @@
       <column key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row2.Header" name="Header" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Body" name="Body" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.Fault" name="Fault" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out3.Header " name="Header" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out3.Fault " name="Body" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out3.Body " name="Fault" nullable="true" type="id_String"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out3" sizeState="INTERMEDIATE"/>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out3" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="Header" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Body" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Fault" nullable="true" type="id_String"/>
+      </inputTables>
     </nodeData>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="128">
@@ -220,11 +232,19 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="out" name="out"/>
+    <metadata connector="FLOW" label="out" name="out">
+      <column key="false" length="0" name="Header" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out" sizeState="INTERMEDIATE"/>
+      <outputTables name="out" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="out2.Header " name="Header" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.Body " name="Body" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out2.Fault " name="Fault" nullable="true" type="id_String"/>
+      </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Header" nullable="true" type="id_String"/>
         <mapperTableEntries name="Body" nullable="true" type="id_String"/>
@@ -245,11 +265,22 @@
     <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Header"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Body"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Fault"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1"/>
+    <metadata connector="FLOW" label="out" name="tLogRow_1">
+      <column key="false" length="0" name="Header" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputXML_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputXML_1" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -272,13 +303,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9419ee4d-d60f-4e81-aa26-e347d9d82a42"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JkxpLHUNznNlxc9ECmigER3edZxYxFuIMspKbEXuQ3vspCqI8Ya9cVPa1aiz9uSW4YKqMLBRqqDZ
-AfuHMruanA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4671de7f-5fdb-4ed6-a8a5-6dc2907d6daf"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1G7iBA6S2vh7X5bUFOuJ6B+7MnWOa0yw1ykcxIhaJ3/SQM1IdM6+6R6Xa/RniJlLc0UexgpD5kl5
-Vapa+iIKKw==</DigestValue></Reference></SignedInfo><SignatureValue>WWtLV5ypSVfe9AIPLqEm7xxyuYkXoaGVqqa9ahkoDqqbUhqCIsnEm1CeKtsZQppy6E5s5x94sljq
-WXvI4H3Hj5fxjaixeE9Nk7BGiS9vOA0ARHICSnACOCkMolpCI+OdzRww8Hvvojc9pcn3b2G5yUZz
-itTYCROw24wRBofzoeSbyBZxaU8hM2u+YLxw2uMgfNj5C/Ph7POPJcGiXnfHehLrfz9alYB7k3Q+
-I6CnAbWrsxaNc5VcIU6kEDWcBfmzyTymc4P/7c+nx6rWa4c2HHrAv6lQhf4kOtypCaErKEBTfwbc
-dmz3zhu+HLTwT9cDFl0e/GAvqhpC9cLXczNw1Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_297e7482-ae8c-432a-80a9-efbf3ecea986"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>J+BsMSNQ2cMF74zW4MwfZTprns+Ic4Gr8x9BPMF/lw4eC8BKlR1NXu+fku8qRBttq6rUAjwuhStx
+mtqGTwq+eQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c1f193e0-f327-42f0-9885-3057bb569ab0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9I+9Xw0brktoJqk9EAPqWw0vwF63iZOaiXSypiVHgvqWAemAjK/jnRq8u68Y1x1pV9fVFHV17Jbv
+GYfsSqLNHg==</DigestValue></Reference></SignedInfo><SignatureValue>ilwsagqiSjgiCxz2aEhahbFeVixyK24WvfuctGuBi3htkhXFxAsBh6zF5aDD67qUfdhNwYQ436I8
+SVXvAV9DjYbN0O4Sn2cuIDTtgg2Xih4V8kEjvwq3NwWTxMC2Fj+THVPIOdDCs2nL/uX7DE1e/Ams
+ZK0japwsGqZFybNyj+6R1QXlfrQ+cmGcu3bDsqq6kRdzvK7L2WzySvE1qBYm+UMyLQbXcoxoV7Gy
+7/msaqPnYedQBzJ0x3l501JD3UtgsqLMQ+qPYbZKbXPOXc1Ox4/bXwgjQkgOHmpBHcIT9d/B1Agp
+eXdRqWKCRVse0A3BT31rG2wgufjblqWBw8rFqQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
@@ -300,4 +331,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4671de7f-5fdb-4ed6-a8a5-6dc2907d6daf" Target="#_9419ee4d-d60f-4e81-aa26-e347d9d82a42"><Timestamp>2021-02-04 15:16:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c1f193e0-f327-42f0-9885-3057bb569ab0" Target="#_297e7482-ae8c-432a-80a9-efbf3ecea986"><Timestamp>2021-02-04 15:18:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
