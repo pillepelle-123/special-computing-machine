@@ -7,6 +7,19 @@
     <documentationStatus xmi:id="_jPv5wGbwEeuiiv-qDw6rEQ" label="unchecked" code="UCK"/>
     <documentationStatus xmi:id="_jPv5wWbwEeuiiv-qDw6rEQ" label="checked" code="CHK"/>
     <documentationStatus xmi:id="_jPv5wmbwEeuiiv-qDw6rEQ" label="validated" code="VAL"/>
+    <ItemsRelations xmi:id="_TXjAEGbyEeuiiv-qDw6rEQ">
+      <baseItem xmi:id="_TXjAEWbyEeuiiv-qDw6rEQ" id="_NrqbUGbyEeuiiv-qDw6rEQ" version="0.1" type="job"/>
+      <relatedItems xmi:id="_TXjAEmbyEeuiiv-qDw6rEQ" id="DataOperation" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAE2byEeuiiv-qDw6rEQ" id="Mathematical" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAFGbyEeuiiv-qDw6rEQ" id="Numeric" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAFWbyEeuiiv-qDw6rEQ" id="Relational" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAFmbyEeuiiv-qDw6rEQ" id="SQLike" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAF2byEeuiiv-qDw6rEQ" id="StringHandling" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAGGbyEeuiiv-qDw6rEQ" id="TalendDataGenerator" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAGWbyEeuiiv-qDw6rEQ" id="TalendDate" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAGmbyEeuiiv-qDw6rEQ" id="TalendString" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_TXjAG2byEeuiiv-qDw6rEQ" id="TalendStringUtil" version="Latest" type="routine"/>
+    </ItemsRelations>
     <ItemsRelations xmi:id="_m1teYGbxEeuiiv-qDw6rEQ">
       <baseItem xmi:id="_m1teYWbxEeuiiv-qDw6rEQ" id="_iTIrEGbxEeuiiv-qDw6rEQ" version="0.1" type="job"/>
       <relatedItems xmi:id="_m1teYmbxEeuiiv-qDw6rEQ" id="DataOperation" version="Latest" type="routine"/>
