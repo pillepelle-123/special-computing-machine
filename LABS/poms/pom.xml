@@ -15,6 +15,7 @@
     <module>jobs/process_mr/bg01_do_sth_0.1</module>
     <module>jobs/process/job2_0.1</module>
     <module>jobs/process/job3_0.1</module>
+    <module>code/pigudf</module>
   </modules>
   <properties>
     <talend.project.name>LABS</talend.project.name>
