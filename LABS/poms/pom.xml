@@ -17,6 +17,7 @@
     <module>jobs/process/job3_0.1</module>
     <module>code/pigudf</module>
     <module>jobs/process/job5_0.1</module>
+    <module>jobs/process/job4_0.1</module>
   </modules>
   <properties>
     <talend.project.name>LABS</talend.project.name>
